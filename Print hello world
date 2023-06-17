@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+    char a[50];
+    scanf("%[^\n]",a);
+    //char a[50]="there are 26 alphabets in english";
+    //char a[50]="I26T is not a digit 1234";
+    char c[20];
+    char *p;
+    int i,j,k,n;
+    p=strtok(a," ");
+    while(p!=NULL) 
+    {
+        n=strlen(p);
+        for(i=n-1,k=0;i>=0;i--,k++)
+        {
+            if((p[i]>='a'&&p[i]<='z')||(p[i]>='A'&&p[i]<='Z'))
+            {
+                c[k]=p[i];
+            }
+            if(p[k]>='0'&&p[k]<='9')
+            {
+                c[k]=p[k];
+            }
+        }
+        if(c[0]>'a'&&a[0]<='z') c[0]-=32;
+        if(c[k-1]>='A'&&c[k-1]<='Z') c[k-1]+=32;
+        c[k]='\0';
+        printf("%s",c);
+        printf(" ");
+        p=strtok(NULL," ");
+    }
+}
