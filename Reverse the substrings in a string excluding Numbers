@@ -7,9 +7,9 @@ int main()
     scanf("%[^\n]",a);
     //char a[50]="there are 26 alphabets in english";
     //char a[50]="I26T is not a digit 1234";
-    char c[20];
+    char c[15];
     char *p;
-    int i,j,k,n;
+    int i,k,n;
     p=strtok(a," ");
     while(p!=NULL) 
     {
